@@ -12,6 +12,7 @@
 		/>
 		<link rel="stylesheet" href="styles.css" />
 		<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+		<script src="script.js" defer></script>
 	</head>
 	<body>
 		<!-- Header -->
@@ -114,34 +115,25 @@
 								эксплуатации.
 							</p>
 						</div>
-						<div class="catalog__filters hide-scrollbar">
-							<button type="button" class="btn btn--filter btn--filter-active">
+						<div class="catalog__filters hide-scrollbar" role="tablist" aria-label="Фильтр каталога">
+							<button type="button" class="btn btn--filter btn--filter-active" data-filter="all" role="tab" aria-selected="true">
 								Все
 							</button>
-							<button
-								type="button"
-								class="btn btn--filter btn--filter-inactive"
-							>
+							<button type="button" class="btn btn--filter btn--filter-inactive" data-filter="20" role="tab" aria-selected="false">
 								20 футов
 							</button>
-							<button
-								type="button"
-								class="btn btn--filter btn--filter-inactive"
-							>
+							<button type="button" class="btn btn--filter btn--filter-inactive" data-filter="40" role="tab" aria-selected="false">
 								40 футов
 							</button>
-							<button
-								type="button"
-								class="btn btn--filter btn--filter-inactive"
-							>
+							<button type="button" class="btn btn--filter btn--filter-inactive" data-filter="used" role="tab" aria-selected="false">
 								Б/У
 							</button>
 						</div>
 					</div>
 
-					<div class="cards-grid">
+					<div class="cards-grid" id="catalog-grid">
 						<!-- Card 1 -->
-						<article class="card">
+						<article class="card" data-size="20" data-condition="used">
 							<div class="card__image">
 								<span class="badge--card badge--default">Б/У Стандарт</span>
 								<iconify-icon icon="solar:box-bold-duotone"></iconify-icon>
@@ -180,7 +172,7 @@
 						</article>
 
 						<!-- Card 2 -->
-						<article class="card">
+						<article class="card" data-size="20" data-condition="new">
 							<div class="card__image">
 								<span class="badge--card badge--new">Новый (One Way)</span>
 								<iconify-icon icon="solar:box-bold-duotone"></iconify-icon>
@@ -219,7 +211,7 @@
 						</article>
 
 						<!-- Card 3 -->
-						<article class="card">
+						<article class="card" data-size="40" data-condition="used">
 							<div class="card__image">
 								<span class="badge--card badge--default">Б/У Увеличенный</span>
 								<span class="card__featured">
@@ -264,7 +256,7 @@
 						</article>
 
 						<!-- Card 4 -->
-						<article class="card">
+						<article class="card" data-size="40" data-condition="used">
 							<div class="card__image">
 								<span class="badge--card badge--special">Спец</span>
 								<iconify-icon icon="solar:snowflake-linear"></iconify-icon>
@@ -298,13 +290,152 @@
 								</div>
 							</div>
 						</article>
+
+						<!-- Card 5 -->
+						<article class="card card--extra" data-size="40" data-condition="used">
+							<div class="card__image">
+								<span class="badge--card badge--default">Б/У Стандарт</span>
+								<iconify-icon icon="solar:box-bold-duotone"></iconify-icon>
+							</div>
+							<div class="card__body">
+								<h3 class="heading-3 card__title">Контейнер 40 футов (Standard)</h3>
+								<p class="card__desc">
+									Классический 40-футовый контейнер для крупных складов и перевозок.
+								</p>
+								<div class="card__specs">
+									<div class="spec-row">
+										<span class="spec-row__label">Состояние</span>
+										<span class="spec-row__value">Герметичен, б/у</span>
+									</div>
+									<div class="spec-row">
+										<span class="spec-row__label">Объем</span>
+										<span class="spec-row__value">67.7 м³</span>
+									</div>
+									<div class="spec-row">
+										<span class="spec-row__label">Вес тары</span>
+										<span class="spec-row__value">3 780 кг</span>
+									</div>
+								</div>
+								<div class="card__price-label">Цена от</div>
+								<div class="card__price">185 000 ₽</div>
+								<div class="card__actions">
+									<button type="button" class="btn btn--dark">Купить</button>
+									<button type="button" class="btn btn--outline">Подробнее</button>
+								</div>
+							</div>
+						</article>
+
+						<!-- Card 6 -->
+						<article class="card card--extra" data-size="20" data-condition="used">
+							<div class="card__image">
+								<span class="badge--card badge--default">Б/У High Cube</span>
+								<iconify-icon icon="solar:box-bold-duotone"></iconify-icon>
+							</div>
+							<div class="card__body">
+								<h3 class="heading-3 card__title">Контейнер 20 футов (High Cube)</h3>
+								<p class="card__desc">
+									Увеличенная высота в формате 20 футов — больше полезного объема на компактной площадке.
+								</p>
+								<div class="card__specs">
+									<div class="spec-row">
+										<span class="spec-row__label">Состояние</span>
+										<span class="spec-row__value">Хорошее, б/у</span>
+									</div>
+									<div class="spec-row">
+										<span class="spec-row__label">Объем</span>
+										<span class="spec-row__value">37.4 м³</span>
+									</div>
+									<div class="spec-row">
+										<span class="spec-row__label">Высота внутри</span>
+										<span class="spec-row__value">2.69 м</span>
+									</div>
+								</div>
+								<div class="card__price-label">Цена от</div>
+								<div class="card__price">145 000 ₽</div>
+								<div class="card__actions">
+									<button type="button" class="btn btn--dark">Купить</button>
+									<button type="button" class="btn btn--outline">Подробнее</button>
+								</div>
+							</div>
+						</article>
+
+						<!-- Card 7 -->
+						<article class="card card--extra" data-size="40" data-condition="new">
+							<div class="card__image">
+								<span class="badge--card badge--new">Новый (One Way)</span>
+								<iconify-icon icon="solar:box-bold-duotone" class="card__icon--large"></iconify-icon>
+							</div>
+							<div class="card__body">
+								<h3 class="heading-3 card__title">Контейнер 40 футов (Новый)</h3>
+								<p class="card__desc">
+									Новый контейнер после одного рейса. Идеален для модульных проектов и презентабельного бизнеса.
+								</p>
+								<div class="card__specs">
+									<div class="spec-row">
+										<span class="spec-row__label">Состояние</span>
+										<span class="spec-row__value">Новый, 1 рейс</span>
+									</div>
+									<div class="spec-row">
+										<span class="spec-row__label">Объем</span>
+										<span class="spec-row__value">67.7 м³</span>
+									</div>
+									<div class="spec-row">
+										<span class="spec-row__label">Вес тары</span>
+										<span class="spec-row__value">3 780 кг</span>
+									</div>
+								</div>
+								<div class="card__price-label">Цена от</div>
+								<div class="card__price">420 000 ₽</div>
+								<div class="card__actions">
+									<button type="button" class="btn btn--dark">Купить</button>
+									<button type="button" class="btn btn--outline">Подробнее</button>
+								</div>
+							</div>
+						</article>
+
+						<!-- Card 8 -->
+						<article class="card card--extra" data-size="20" data-condition="new">
+							<div class="card__image">
+								<span class="badge--card badge--special">Офисный модуль</span>
+								<iconify-icon icon="solar:buildings-2-linear"></iconify-icon>
+							</div>
+							<div class="card__body">
+								<h3 class="heading-3 card__title">Контейнер 20 футов (Офис)</h3>
+								<p class="card__desc">
+									Готовое решение под офис, КПП или бытовку с базовой отделкой и электрикой.
+								</p>
+								<div class="card__specs">
+									<div class="spec-row">
+										<span class="spec-row__label">Комплектация</span>
+										<span class="spec-row__value">Утепление, свет</span>
+									</div>
+									<div class="spec-row">
+										<span class="spec-row__label">Срок изготовления</span>
+										<span class="spec-row__value">от 7 дней</span>
+									</div>
+									<div class="spec-row">
+										<span class="spec-row__label">Доставка</span>
+										<span class="spec-row__value">Манипулятором</span>
+									</div>
+								</div>
+								<div class="card__price-label">Цена от</div>
+								<div class="card__price">350 000 ₽</div>
+								<div class="card__actions">
+									<button type="button" class="btn btn--dark">Купить</button>
+									<button type="button" class="btn btn--outline">Подробнее</button>
+								</div>
+							</div>
+						</article>
 					</div>
 
 					<div class="catalog__more">
-						<a href="#" class="link-accent">
-							Смотреть весь каталог и цены
-							<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
-						</a>
+						<button type="button" class="btn catalog__expand-btn" id="catalog-expand-btn" aria-expanded="false">
+							<span class="catalog__expand-btn-text">Смотреть весь каталог и цены</span>
+							<iconify-icon icon="solar:alt-arrow-down-linear" class="catalog__expand-btn-icon"></iconify-icon>
+						</button>
+						<p class="catalog__empty" id="catalog-empty" hidden>
+							По выбранному фильтру ничего не найдено. Попробуйте другой параметр.
+						</p>
 					</div>
 				</div>
 			</section>
