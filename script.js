@@ -1,4 +1,58 @@
-(function () {
+document.addEventListener('DOMContentLoaded', () => {
+	initHeaderMenu();
+	initCatalog();
+});
+
+function initHeaderMenu() {
+	const header = document.querySelector('.header');
+	const burger = document.getElementById('header-burger');
+	const panel = document.getElementById('header-panel');
+	const overlay = document.getElementById('header-overlay');
+	const desktopMq = window.matchMedia('(min-width: 1024px)');
+
+	if (!header || !burger || !panel) return;
+
+	const panelLinks = panel.querySelectorAll('a[href^="#"]');
+
+	function setMenuOpen(open) {
+		header.classList.toggle('is-open', open);
+		burger.setAttribute('aria-expanded', String(open));
+		burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+		document.body.classList.toggle('menu-open', open);
+
+		if (overlay) {
+			overlay.hidden = !open;
+		}
+	}
+
+	function closeMenu() {
+		setMenuOpen(false);
+	}
+
+	function toggleMenu() {
+		setMenuOpen(!header.classList.contains('is-open'));
+	}
+
+	burger.addEventListener('click', toggleMenu);
+
+	if (overlay) {
+		overlay.addEventListener('click', closeMenu);
+	}
+
+	panelLinks.forEach((link) => {
+		link.addEventListener('click', closeMenu);
+	});
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape') closeMenu();
+	});
+
+	desktopMq.addEventListener('change', (event) => {
+		if (event.matches) closeMenu();
+	});
+}
+
+function initCatalog() {
 	const grid = document.getElementById('catalog-grid');
 	const filters = document.querySelector('.catalog__filters');
 	const expandBtn = document.getElementById('catalog-expand-btn');
@@ -7,57 +61,68 @@
 
 	if (!grid || !filters || !expandBtn) return;
 
-	const cards = Array.from(grid.querySelectorAll('.card'));
-	const extraCards = cards.filter((card) => card.classList.contains('card--extra'));
+	const cards = [...grid.querySelectorAll('.card')];
+	const rowLimits = {
+		lg: window.matchMedia('(min-width: 1024px)'),
+		sm: window.matchMedia('(min-width: 640px)'),
+	};
 
 	let currentFilter = 'all';
 	let isExpanded = false;
 
-	function cardMatchesFilter(card) {
-		const size = card.dataset.size;
-		const condition = card.dataset.condition;
+	function getRowLimit() {
+		if (rowLimits.lg.matches) return 4;
+		if (rowLimits.sm.matches) return 2;
+		return 1;
+	}
 
-		if (currentFilter === '20') return size === '20';
-		if (currentFilter === '40') return size === '40';
-		if (currentFilter === 'used') return condition === 'used';
-		return true;
+	function matchesFilter(card) {
+		const { size, condition } = card.dataset;
+
+		switch (currentFilter) {
+			case '20':
+				return size === '20';
+			case '40':
+				return size === '40';
+			case 'used':
+				return condition === 'used';
+			default:
+				return true;
+		}
 	}
 
 	function getMatchingCards() {
-		return cards.filter(cardMatchesFilter);
+		return cards.filter(matchesFilter);
 	}
 
-	function getHiddenExtraMatches() {
-		return extraCards.filter(
-			(card) => cardMatchesFilter(card) && !isExpanded
-		);
+	function setCardVisible(card, visible) {
+		card.classList.toggle('card--hidden', !visible);
+		card.toggleAttribute('hidden', !visible);
 	}
 
 	function applyCatalogView() {
 		const matching = getMatchingCards();
-		let visibleCount = 0;
+		const rowLimit = getRowLimit();
+		const visibleIds = new Set();
 
-		cards.forEach((card) => {
-			const matches = cardMatchesFilter(card);
-			const isExtra = card.classList.contains('card--extra');
-			const isVisible = matches && (!isExtra || isExpanded);
+		if (isExpanded) {
+			matching.forEach((card) => visibleIds.add(card));
+		} else {
+			matching.slice(0, rowLimit).forEach((card) => visibleIds.add(card));
+		}
 
-			card.classList.toggle('card--hidden', !isVisible);
-			card.setAttribute('aria-hidden', String(!isVisible));
-
-			if (isVisible) visibleCount += 1;
-		});
+		cards.forEach((card) => setCardVisible(card, visibleIds.has(card)));
 
 		grid.classList.toggle('is-expanded', isExpanded);
 
 		if (emptyState) {
-			emptyState.hidden = visibleCount > 0;
+			emptyState.hidden = matching.length > 0;
 		}
 
-		updateExpandButton();
+		updateExpandButton(matching.length, rowLimit);
 	}
 
-	function updateFilterButtons(activeBtn) {
+	function setActiveFilter(activeBtn) {
 		filters.querySelectorAll('[data-filter]').forEach((btn) => {
 			const isActive = btn === activeBtn;
 			btn.classList.toggle('btn--filter-active', isActive);
@@ -66,11 +131,10 @@
 		});
 	}
 
-	function updateExpandButton() {
-		const hiddenExtras = getHiddenExtraMatches();
-		const hasHiddenExtras = hiddenExtras.length > 0;
+	function updateExpandButton(matchingCount, rowLimit) {
+		const hasMore = matchingCount > rowLimit;
 
-		expandBtn.hidden = !hasHiddenExtras && !isExpanded;
+		expandBtn.hidden = !hasMore && !isExpanded;
 		expandBtn.setAttribute('aria-expanded', String(isExpanded));
 
 		if (expandBtnText) {
@@ -85,7 +149,7 @@
 		if (!btn) return;
 
 		currentFilter = btn.dataset.filter;
-		updateFilterButtons(btn);
+		setActiveFilter(btn);
 		applyCatalogView();
 	});
 
@@ -94,5 +158,9 @@
 		applyCatalogView();
 	});
 
+	Object.values(rowLimits).forEach((mq) => {
+		mq.addEventListener('change', applyCatalogView);
+	});
+
 	applyCatalogView();
-})();
+}
