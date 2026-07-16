@@ -10,6 +10,10 @@
 			name="description"
 			content="Надежные морские контейнеры 20 и 40 футов в наличии. Продажа новых и б/у контейнеров под склад, стройку, бизнес. Быстрая доставка манипулятором по Москве, МО, СПб и регионам."
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
 		<link rel="stylesheet" href="./css/style.css" />
 		<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 	</head>
@@ -47,7 +51,7 @@
 								<a href="tel:+74950000000">+7 (495) 000-00-00</a>
 								<span>Ежедневно 9:00 - 20:00</span>
 							</div>
-							<div class="header__actions">
+							<div class="header__actions actions">
 								<a
 									href="https://wa.me/74950000000"
 									class="icon-btn icon-btn--whatsapp"
@@ -711,6 +715,188 @@
 					</div>
 				</div>
 			</section>
+			<section class="section reviews">
+				<div class="container">
+					<div class="specs__intro">
+						<h2 class="heading-2">Отзывы клиентов</h2>
+						<p class="text-muted">Что говорят покупатели о нашем сервисе</p>
+					</div>
+					<div class="swiper reviews__slider">
+						<div class="swiper-wrapper">
+							<div class="review-card swiper-slide">
+								<div class="review-card__image">
+									<img src="./images/reviews/review-1.jpg" alt="" />
+								</div>
+								<div class="review-card__body">
+									<div class="review-card__top">
+										<div class="review-card__rating">★★★★★</div>
+										<div class="review-card__date">18.05.2026</div>
+									</div>
+									<div class="review-card__author">Алексей Смирнов</div>
+									<div class="review-card__company">Новосибирск</div>
+									<p class="review-card__text">
+										Покупали контейнер под склад. Приехал именно в том
+										состоянии, которое было на фотографиях. Герметичный, двери
+										открываются легко, доставка без задержек.
+									</p>
+								</div>
+							</div>
+							<div class="review-card swiper-slide">
+								<div class="review-card__image">
+									<img src="./images/reviews/review-2.jpg" alt="" />
+								</div>
+								<div class="review-card__body">
+									<div class="review-card__top">
+										<div class="review-card__rating">★★★★★</div>
+										<div class="review-card__date">18.05.2026</div>
+									</div>
+									<div class="review-card__author">Сергей Морозов</div>
+									<div class="review-card__company">Новосибирск</div>
+									<p class="review-card__text">
+										Покупал контейнер для дачного участка. Всё честно: состояние
+										соответствует описанию, доставка без задержек. Отдельное
+										спасибо за помощь с выбором.
+									</p>
+								</div>
+							</div>
+							<div class="review-card swiper-slide">
+								<div class="review-card__image">
+									<img src="./images/reviews/review-3.jpg" alt="" />
+								</div>
+								<div class="review-card__body">
+									<div class="review-card__top">
+										<div class="review-card__rating">★★★★★</div>
+										<div class="review-card__date">18.05.2026</div>
+									</div>
+									<div class="review-card__author">Дмитрий Орлов</div>
+									<div class="review-card__company">Новосибирск</div>
+									<p class="review-card__text">
+										Обращался по рекомендации знакомых. Менеджер ответил на все
+										вопросы, помог выбрать контейнер под наши задачи и быстро
+										оформил заказ. Доставка приехала вовремя, контейнер
+										установили аккуратно. Приятно работать с компанией, которая
+										выполняет свои обещания.
+									</p>
+								</div>
+							</div>
+							<div class="review-card swiper-slide">
+								<div class="review-card__image">
+									<img src="./images/reviews/review-4.jpg" alt="" />
+								</div>
+								<div class="review-card__body">
+									<div class="review-card__top">
+										<div class="review-card__rating">★★★★★</div>
+										<div class="review-card__date">18.05.2026</div>
+									</div>
+									<div class="review-card__author">Андрей Белов</div>
+									<div class="review-card__company">Новосибирск</div>
+									<p class="review-card__text">
+										Приобрели 40-футовый контейнер для организации склада. Всё
+										прошло быстро: от оформления заказа до доставки. Контейнер
+										сухой, без протечек, замки работают исправно. Уже несколько
+										месяцев используем его по назначению — никаких замечаний
+										нет.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</section>
+			<section class="section faq">
+				<div class="container">
+					<div class="specs__intro">
+						<h2 class="heading-2">Вопросы и ответы</h2>
+						<p class="text-muted">
+							Ответы на самые популярные вопросы наших клиентов
+						</p>
+					</div>
+					<div class="faq__list">
+						<div class="faq__item active">
+							<button class="faq__question" type="button">
+								<span class="heading-3">Какие контейнеры есть в наличии?</span>
+								<iconify-icon
+									class="faq__icon"
+									icon="solar:alt-arrow-down-linear"
+								></iconify-icon>
+							</button>
+							<div class="faq__answer">
+								<p class="text-p-default">
+									В наличии 20-, 40- и 45-футовые морские контейнеры различных
+									категорий состояния: новые, б/у и после капитального ремонта.
+								</p>
+							</div>
+						</div>
+						<div class="faq__item">
+							<button class="faq__question" type="button">
+								<span class="heading-3">Можно ли организовать доставку?</span>
+								<iconify-icon
+									class="faq__icon"
+									icon="solar:alt-arrow-down-linear"
+								></iconify-icon>
+							</button>
+							<div class="faq__answer">
+								<p class="text-p-default">
+									Да. Мы организуем доставку контейнера по городу, области и в
+									другие регионы России с помощью собственного транспорта и
+									проверенных логистических партнеров.
+								</p>
+							</div>
+						</div>
+						<div class="faq__item">
+							<button class="faq__question" type="button">
+								<span class="heading-3"
+									>Можно ли осмотреть контейнер перед покупкой?</span
+								>
+								<iconify-icon
+									class="faq__icon"
+									icon="solar:alt-arrow-down-linear"
+								></iconify-icon>
+							</button>
+							<div class="faq__answer">
+								<p class="text-p-default">
+									Конечно. Вы можете приехать на нашу площадку, осмотреть
+									контейнер, оценить его состояние и только после этого принять
+									решение о покупке.
+								</p>
+							</div>
+						</div>
+						<div class="faq__item">
+							<button class="faq__question" type="button">
+								<span class="heading-3">Какие способы оплаты доступны?</span>
+								<iconify-icon
+									class="faq__icon"
+									icon="solar:alt-arrow-down-linear"
+								></iconify-icon>
+							</button>
+							<div class="faq__answer">
+								<p class="text-p-default">
+									Принимаем оплату наличными, банковским переводом и по
+									безналичному расчету для юридических лиц с предоставлением
+									всех необходимых документов.
+								</p>
+							</div>
+						</div>
+						<div class="faq__item">
+							<button class="faq__question" type="button">
+								<span class="heading-3">Есть ли гарантия на контейнеры?</span>
+								<iconify-icon
+									class="faq__icon"
+									icon="solar:alt-arrow-down-linear"
+								></iconify-icon>
+							</button>
+							<div class="faq__answer">
+								<p class="text-p-default">
+									Да. На все контейнеры предоставляется гарантия, а перед
+									продажей каждый из них проходит проверку на герметичность и
+									общее техническое состояние.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<section id="delivery" class="section delivery">
 				<div class="container">
 					<div class="delivery__grid">
@@ -859,19 +1045,39 @@
 					<div>
 						<a href="./" class="logo">
 							<iconify-icon icon="solar:box-minimalistic-linear"></iconify-icon>
-							CONTEX
+							Контейнер 24
 						</a>
 						<p class="footer__about">
 							Профессиональная продажа и логистика морских контейнеров. Надежный
 							партнер для вашего бизнеса и частных задач.
 						</p>
-						<div class="footer__social">
+						<div class="header__actions actions">
 							<a
-								href="mailto:info@contex.ru"
-								class="link-muted"
-								aria-label="Email"
+								href="https://wa.me/74950000000"
+								class="icon-btn icon-btn--whatsapp"
+								aria-label="Написать в WhatsApp"
+								target="_blank"
+								rel="noopener noreferrer"
 							>
-								<iconify-icon icon="solar:letter-linear"></iconify-icon>
+								<iconify-icon icon="mdi:whatsapp"></iconify-icon>
+							</a>
+							<a
+								href="https://t.me/+74950000000"
+								class="icon-btn icon-btn--telegram"
+								aria-label="Написать в Telegram"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<iconify-icon icon="mdi:telegram"></iconify-icon>
+							</a>
+							<a
+								href="https://vk.com/"
+								class="icon-btn icon-btn--vk"
+								aria-label="Мы ВКонтакте"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<iconify-icon icon="mdi:vk"></iconify-icon>
 							</a>
 						</div>
 					</div>
@@ -934,7 +1140,8 @@
 				</div>
 				<div class="footer__bottom">
 					<p>
-						© 2024 CONTEX. Все права защищены. Не является публичной офертой.
+						© 2026 Контейнер 24. Все права защищены. Не является публичной
+						офертой.
 					</p>
 					<div class="footer__legal">
 						<a href="#" class="link-muted">Политика конфиденциальности</a>
@@ -944,5 +1151,8 @@
 			</div>
 		</footer>
 		<script type="module" src="./js/main.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script type="module" src="./js/main.js"></script>
+		<script type="module" src="./js/faq.js"></script>
 	</body>
 </html>

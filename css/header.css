@@ -59,7 +59,9 @@
 	height: 2px;
 	background: var(--slate-900);
 	border-radius: 1px;
-	transition: transform 0.25s ease, opacity 0.25s ease;
+	transition:
+		transform 0.25s ease,
+		opacity 0.25s ease;
 }
 
 .header.is-open .header__burger-line:nth-child(1) {
@@ -255,18 +257,6 @@
 	font-size: 0.75rem;
 	color: var(--slate-500);
 	font-weight: 400;
-}
-
-.header__actions {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-@media (max-width: 1023px) {
-	.header__actions {
-		gap: 0.75rem;
-	}
 }
 
 .icon-btn {
