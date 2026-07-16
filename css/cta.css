@@ -20,15 +20,15 @@
 }
 
 .cta__title {
-	font-size: 1.875rem;
+	font-size: 2.25rem;
 	font-weight: 600;
 	letter-spacing: var(--tracking-tight);
 	margin-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) {
 	.cta__title {
-		font-size: 2.25rem;
+		font-size: 1.875rem;
 	}
 }
 
