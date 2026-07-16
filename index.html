@@ -10,18 +10,16 @@
 			name="description"
 			content="Надежные морские контейнеры 20 и 40 футов в наличии. Продажа новых и б/у контейнеров под склад, стройку, бизнес. Быстрая доставка манипулятором по Москве, МО, СПб и регионам."
 		/>
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="./css/style.css" />
 		<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 	</head>
 	<body>
-		<!-- Header -->
 		<header class="header">
 			<div class="container header__inner">
-				<a href="#" class="logo">
+				<a href="./" class="logo">
 					<iconify-icon icon="solar:box-minimalistic-linear"></iconify-icon>
-					CONTEX
+					Контейнер 24
 				</a>
-
 				<button
 					type="button"
 					class="header__burger"
@@ -34,34 +32,57 @@
 					<span class="header__burger-line"></span>
 					<span class="header__burger-line"></span>
 				</button>
-
 				<div class="header__drawer" id="header-drawer">
 					<div class="header__panel" id="header-panel">
-					<nav class="nav" aria-label="Основная навигация">
-						<a href="#catalog" class="link-nav">Каталог</a>
-						<a href="#applications" class="link-nav">Решения</a>
-						<a href="#specs" class="link-nav">Размеры</a>
-						<a href="#delivery" class="link-nav">Доставка</a>
-						<a href="#contacts" class="link-nav">Контакты</a>
-					</nav>
-
-					<div class="header__panel-footer">
-						<div class="header__phone">
-							<a href="tel:+74950000000">+7 (495) 000-00-00</a>
-							<span>Ежедневно 9:00 - 20:00</span>
+						<nav class="nav" aria-label="Основная навигация">
+							<a href="#catalog" class="link-nav">Каталог</a>
+							<a href="#applications" class="link-nav">Решения</a>
+							<a href="#specs" class="link-nav">Размеры</a>
+							<a href="#delivery" class="link-nav">Доставка</a>
+							<a href="#contacts" class="link-nav">Контакты</a>
+							<a href="/" class="link-nav">Терминал</a>
+						</nav>
+						<div class="header__panel-footer">
+							<div class="header__phone">
+								<a href="tel:+74950000000">+7 (495) 000-00-00</a>
+								<span>Ежедневно 9:00 - 20:00</span>
+							</div>
+							<div class="header__actions">
+								<a
+									href="https://wa.me/74950000000"
+									class="icon-btn icon-btn--whatsapp"
+									aria-label="Написать в WhatsApp"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<iconify-icon icon="mdi:whatsapp"></iconify-icon>
+								</a>
+								<a
+									href="https://t.me/+74950000000"
+									class="icon-btn icon-btn--telegram"
+									aria-label="Написать в Telegram"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<iconify-icon icon="mdi:telegram"></iconify-icon>
+								</a>
+								<a
+									href="https://vk.com/"
+									class="icon-btn icon-btn--vk"
+									aria-label="Мы ВКонтакте"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<iconify-icon icon="mdi:vk"></iconify-icon>
+								</a>
+							</div>
 						</div>
-						<div class="header__actions">
-							<a href="#delivery-calc" class="btn btn--primary header__cta">Оставить заявку</a>
-						</div>
-					</div>
 					</div>
 				</div>
 			</div>
 			<div class="header__overlay" id="header-overlay" hidden></div>
 		</header>
-
 		<main class="main">
-			<!-- Hero -->
 			<section class="hero">
 				<div class="hero__pattern" aria-hidden="true"></div>
 				<div class="hero__gradient" aria-hidden="true"></div>
@@ -116,8 +137,6 @@
 					</div>
 				</div>
 			</section>
-
-			<!-- Catalog -->
 			<section id="catalog" class="section catalog">
 				<div class="container">
 					<div class="catalog__header">
@@ -129,22 +148,49 @@
 								эксплуатации.
 							</p>
 						</div>
-						<div class="catalog__filters hide-scrollbar" role="tablist" aria-label="Фильтр каталога">
-							<button type="button" class="btn btn--filter btn--filter-active" data-filter="all" role="tab" aria-selected="true">
+						<div
+							class="catalog__filters hide-scrollbar"
+							role="tablist"
+							aria-label="Фильтр каталога"
+						>
+							<button
+								type="button"
+								class="btn btn--filter btn--filter-active"
+								data-filter="all"
+								role="tab"
+								aria-selected="true"
+							>
 								Все
 							</button>
-							<button type="button" class="btn btn--filter btn--filter-inactive" data-filter="20" role="tab" aria-selected="false">
+							<button
+								type="button"
+								class="btn btn--filter btn--filter-inactive"
+								data-filter="20"
+								role="tab"
+								aria-selected="false"
+							>
 								20 футов
 							</button>
-							<button type="button" class="btn btn--filter btn--filter-inactive" data-filter="40" role="tab" aria-selected="false">
+							<button
+								type="button"
+								class="btn btn--filter btn--filter-inactive"
+								data-filter="40"
+								role="tab"
+								aria-selected="false"
+							>
 								40 футов
 							</button>
-							<button type="button" class="btn btn--filter btn--filter-inactive" data-filter="used" role="tab" aria-selected="false">
+							<button
+								type="button"
+								class="btn btn--filter btn--filter-inactive"
+								data-filter="used"
+								role="tab"
+								aria-selected="false"
+							>
 								Б/У
 							</button>
 						</div>
 					</div>
-
 					<div class="cards-grid" id="catalog-grid">
 						<!-- Card 1 -->
 						<article class="card" data-size="20" data-condition="used">
@@ -178,12 +224,12 @@
 								<div class="card__price">125 000 ₽</div>
 								<div class="card__actions">
 									<a href="#delivery-calc" class="btn btn--dark">Купить</a>
-									<a href="#delivery-calc" class="btn btn--outline">Подробнее</a>
+									<a href="#delivery-calc" class="btn btn--outline"
+										>Подробнее</a
+									>
 								</div>
 							</div>
 						</article>
-
-						<!-- Card 2 -->
 						<article class="card" data-size="20" data-condition="new">
 							<div class="card__image">
 								<span class="badge--card badge--new">Новый (One Way)</span>
@@ -215,12 +261,12 @@
 								<div class="card__price">280 000 ₽</div>
 								<div class="card__actions">
 									<a href="#delivery-calc" class="btn btn--dark">Купить</a>
-									<a href="#delivery-calc" class="btn btn--outline">Подробнее</a>
+									<a href="#delivery-calc" class="btn btn--outline"
+										>Подробнее</a
+									>
 								</div>
 							</div>
 						</article>
-
-						<!-- Card 3 -->
 						<article class="card" data-size="40" data-condition="used">
 							<div class="card__image">
 								<span class="badge--card badge--default">Б/У Увеличенный</span>
@@ -255,12 +301,12 @@
 								<div class="card__price">210 000 ₽</div>
 								<div class="card__actions">
 									<a href="#delivery-calc" class="btn btn--dark">Купить</a>
-									<a href="#delivery-calc" class="btn btn--outline">Подробнее</a>
+									<a href="#delivery-calc" class="btn btn--outline"
+										>Подробнее</a
+									>
 								</div>
 							</div>
 						</article>
-
-						<!-- Card 4 -->
 						<article class="card" data-size="40" data-condition="used">
 							<div class="card__image">
 								<span class="badge--card badge--special">Спец</span>
@@ -295,17 +341,22 @@
 								</div>
 							</div>
 						</article>
-
-						<!-- Card 5 -->
-						<article class="card card--extra" data-size="40" data-condition="used">
+						<article
+							class="card card--extra"
+							data-size="40"
+							data-condition="used"
+						>
 							<div class="card__image">
 								<span class="badge--card badge--default">Б/У Стандарт</span>
 								<iconify-icon icon="solar:box-bold-duotone"></iconify-icon>
 							</div>
 							<div class="card__body">
-								<h3 class="heading-3 card__title">Контейнер 40 футов (Standard)</h3>
+								<h3 class="heading-3 card__title">
+									Контейнер 40 футов (Standard)
+								</h3>
 								<p class="card__desc">
-									Классический 40-футовый контейнер для крупных складов и перевозок.
+									Классический 40-футовый контейнер для крупных складов и
+									перевозок.
 								</p>
 								<div class="card__specs">
 									<div class="spec-row">
@@ -325,21 +376,28 @@
 								<div class="card__price">185 000 ₽</div>
 								<div class="card__actions">
 									<a href="#delivery-calc" class="btn btn--dark">Купить</a>
-									<a href="#delivery-calc" class="btn btn--outline">Подробнее</a>
+									<a href="#delivery-calc" class="btn btn--outline"
+										>Подробнее</a
+									>
 								</div>
 							</div>
 						</article>
-
-						<!-- Card 6 -->
-						<article class="card card--extra" data-size="20" data-condition="used">
+						<article
+							class="card card--extra"
+							data-size="20"
+							data-condition="used"
+						>
 							<div class="card__image">
 								<span class="badge--card badge--default">Б/У High Cube</span>
 								<iconify-icon icon="solar:box-bold-duotone"></iconify-icon>
 							</div>
 							<div class="card__body">
-								<h3 class="heading-3 card__title">Контейнер 20 футов (High Cube)</h3>
+								<h3 class="heading-3 card__title">
+									Контейнер 20 футов (High Cube)
+								</h3>
 								<p class="card__desc">
-									Увеличенная высота в формате 20 футов — больше полезного объема на компактной площадке.
+									Увеличенная высота в формате 20 футов — больше полезного
+									объема на компактной площадке.
 								</p>
 								<div class="card__specs">
 									<div class="spec-row">
@@ -359,21 +417,28 @@
 								<div class="card__price">145 000 ₽</div>
 								<div class="card__actions">
 									<a href="#delivery-calc" class="btn btn--dark">Купить</a>
-									<a href="#delivery-calc" class="btn btn--outline">Подробнее</a>
+									<a href="#delivery-calc" class="btn btn--outline"
+										>Подробнее</a
+									>
 								</div>
 							</div>
 						</article>
-
-						<!-- Card 7 -->
-						<article class="card card--extra" data-size="40" data-condition="new">
+						<article
+							class="card card--extra"
+							data-size="40"
+							data-condition="new"
+						>
 							<div class="card__image">
 								<span class="badge--card badge--new">Новый (One Way)</span>
 								<iconify-icon icon="solar:box-bold-duotone"></iconify-icon>
 							</div>
 							<div class="card__body">
-								<h3 class="heading-3 card__title">Контейнер 40 футов (Новый)</h3>
+								<h3 class="heading-3 card__title">
+									Контейнер 40 футов (Новый)
+								</h3>
 								<p class="card__desc">
-									Новый контейнер после одного рейса. Идеален для модульных проектов и презентабельного бизнеса.
+									Новый контейнер после одного рейса. Идеален для модульных
+									проектов и презентабельного бизнеса.
 								</p>
 								<div class="card__specs">
 									<div class="spec-row">
@@ -393,13 +458,17 @@
 								<div class="card__price">420 000 ₽</div>
 								<div class="card__actions">
 									<a href="#delivery-calc" class="btn btn--dark">Купить</a>
-									<a href="#delivery-calc" class="btn btn--outline">Подробнее</a>
+									<a href="#delivery-calc" class="btn btn--outline"
+										>Подробнее</a
+									>
 								</div>
 							</div>
 						</article>
-
-						<!-- Card 8 -->
-						<article class="card card--extra" data-size="20" data-condition="new">
+						<article
+							class="card card--extra"
+							data-size="20"
+							data-condition="new"
+						>
 							<div class="card__image">
 								<span class="badge--card badge--special">Офисный модуль</span>
 								<iconify-icon icon="solar:buildings-2-linear"></iconify-icon>
@@ -407,7 +476,8 @@
 							<div class="card__body">
 								<h3 class="heading-3 card__title">Контейнер 20 футов (Офис)</h3>
 								<p class="card__desc">
-									Готовое решение под офис, КПП или бытовку с базовой отделкой и электрикой.
+									Готовое решение под офис, КПП или бытовку с базовой отделкой и
+									электрикой.
 								</p>
 								<div class="card__specs">
 									<div class="spec-row">
@@ -427,25 +497,35 @@
 								<div class="card__price">350 000 ₽</div>
 								<div class="card__actions">
 									<a href="#delivery-calc" class="btn btn--dark">Купить</a>
-									<a href="#delivery-calc" class="btn btn--outline">Подробнее</a>
+									<a href="#delivery-calc" class="btn btn--outline"
+										>Подробнее</a
+									>
 								</div>
 							</div>
 						</article>
 					</div>
-
 					<div class="catalog__more">
-						<button type="button" class="btn catalog__expand-btn" id="catalog-expand-btn" aria-expanded="false">
-							<span class="catalog__expand-btn-text">Смотреть весь каталог и цены</span>
-							<iconify-icon icon="solar:alt-arrow-down-linear" class="catalog__expand-btn-icon"></iconify-icon>
+						<button
+							type="button"
+							class="btn catalog__expand-btn"
+							id="catalog-expand-btn"
+							aria-expanded="false"
+						>
+							<span class="catalog__expand-btn-text"
+								>Смотреть весь каталог и цены</span
+							>
+							<iconify-icon
+								icon="solar:alt-arrow-down-linear"
+								class="catalog__expand-btn-icon"
+							></iconify-icon>
 						</button>
 						<p class="catalog__empty" id="catalog-empty" hidden>
-							По выбранному фильтру ничего не найдено. Попробуйте другой параметр.
+							По выбранному фильтру ничего не найдено. Попробуйте другой
+							параметр.
 						</p>
 					</div>
 				</div>
 			</section>
-
-			<!-- Use Cases -->
 			<section id="applications" class="section use-cases">
 				<div class="container">
 					<div class="use-cases__intro">
@@ -456,7 +536,6 @@
 							строительство.
 						</p>
 					</div>
-
 					<div class="use-cases__grid">
 						<div class="use-case">
 							<div class="use-case__icon">
@@ -478,7 +557,6 @@
 								</li>
 							</ul>
 						</div>
-
 						<div class="use-case">
 							<div class="use-case__icon">
 								<iconify-icon icon="solar:home-angle-linear"></iconify-icon>
@@ -499,7 +577,6 @@
 								</li>
 							</ul>
 						</div>
-
 						<div class="use-case">
 							<div class="use-case__icon">
 								<iconify-icon icon="solar:shop-linear"></iconify-icon>
@@ -525,8 +602,6 @@
 					</div>
 				</div>
 			</section>
-
-			<!-- Specs -->
 			<section id="specs" class="section specs">
 				<div class="container">
 					<div class="specs__intro">
@@ -536,7 +611,6 @@
 							площадки и понимания вместимости.
 						</p>
 					</div>
-
 					<div class="specs__table-wrap">
 						<table class="specs__table">
 							<thead>
@@ -593,8 +667,6 @@
 					</div>
 				</div>
 			</section>
-
-			<!-- Delivery -->
 			<section id="delivery" class="section delivery">
 				<div class="container">
 					<div class="delivery__grid">
@@ -610,7 +682,6 @@
 								Организуем доставку морских контейнеров собственным транспортом.
 								Привезем, аккуратно выгрузим и установим на вашей территории.
 							</p>
-
 							<div class="delivery__steps">
 								<div class="step">
 									<div class="step__num">1</div>
@@ -646,7 +717,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="delivery__form-card" id="delivery-calc">
 							<h3 class="delivery__form-title">
 								Рассчитать стоимость доставки
@@ -706,8 +776,6 @@
 					</div>
 				</div>
 			</section>
-
-			<!-- CTA -->
 			<section class="section section--cta cta">
 				<div class="cta__pattern" aria-hidden="true"></div>
 				<div class="container container--narrow cta__content">
@@ -717,7 +785,6 @@
 						задачи и бюджет. Пришлем реальные фото контейнеров со склада в
 						WhatsApp.
 					</p>
-
 					<form class="form-inline">
 						<input
 							type="tel"
@@ -729,7 +796,6 @@
 							Подобрать варианты
 						</button>
 					</form>
-
 					<div class="cta__features">
 						<div>
 							<iconify-icon icon="solar:shield-check-linear"></iconify-icon>
@@ -743,13 +809,11 @@
 				</div>
 			</section>
 		</main>
-
-		<!-- Footer -->
 		<footer id="contacts" class="footer">
 			<div class="container">
 				<div class="footer__grid">
 					<div>
-						<a href="#" class="logo">
+						<a href="./" class="logo">
 							<iconify-icon icon="solar:box-minimalistic-linear"></iconify-icon>
 							CONTEX
 						</a>
@@ -758,36 +822,49 @@
 							партнер для вашего бизнеса и частных задач.
 						</p>
 						<div class="footer__social">
-							<a href="#" class="link-muted" aria-label="Email">
+							<a
+								href="mailto:info@contex.ru"
+								class="link-muted"
+								aria-label="Email"
+							>
 								<iconify-icon icon="solar:letter-linear"></iconify-icon>
 							</a>
 						</div>
 					</div>
-
 					<div>
 						<h4 class="footer__heading">Каталог</h4>
 						<ul class="footer__links">
-							<li><a href="#" class="link-footer">Контейнеры 20 футов</a></li>
-							<li><a href="#" class="link-footer">Контейнеры 40 футов</a></li>
-							<li><a href="#" class="link-footer">Новые контейнеры</a></li>
-							<li><a href="#" class="link-footer">Б/У контейнеры</a></li>
-							<li><a href="#" class="link-footer">Рефконтейнеры</a></li>
+							<li>
+								<a href="#catalog" class="link-footer">Контейнеры 20 футов</a>
+							</li>
+							<li>
+								<a href="#catalog" class="link-footer">Контейнеры 40 футов</a>
+							</li>
+							<li>
+								<a href="#catalog" class="link-footer">Новые контейнеры</a>
+							</li>
+							<li><a href="#catalog" class="link-footer">Б/У контейнеры</a></li>
+							<li><a href="#catalog" class="link-footer">Рефконтейнеры</a></li>
 						</ul>
 					</div>
-
 					<div>
 						<h4 class="footer__heading">Информация</h4>
 						<ul class="footer__links">
-							<li><a href="#" class="link-footer">Цены</a></li>
-							<li><a href="#" class="link-footer">Доставка</a></li>
+							<li><a href="#catalog" class="link-footer">Цены</a></li>
+							<li><a href="#delivery" class="link-footer">Доставка</a></li>
 							<li>
-								<a href="#" class="link-footer">Размеры и характеристики</a>
+								<a href="#specs" class="link-footer"
+									>Размеры и характеристики</a
+								>
 							</li>
-							<li><a href="#" class="link-footer">Как выбрать</a></li>
-							<li><a href="#" class="link-footer">Выкуп контейнеров</a></li>
+							<li>
+								<a href="#applications" class="link-footer">Как выбрать</a>
+							</li>
+							<li>
+								<a href="#contacts" class="link-footer">Выкуп контейнеров</a>
+							</li>
 						</ul>
 					</div>
-
 					<div>
 						<h4 class="footer__heading">Контакты</h4>
 						<ul class="footer__contact">
@@ -811,7 +888,6 @@
 						</ul>
 					</div>
 				</div>
-
 				<div class="footer__bottom">
 					<p>
 						© 2024 CONTEX. Все права защищены. Не является публичной офертой.
@@ -823,6 +899,6 @@
 				</div>
 			</div>
 		</footer>
-		<script src="script.js"></script>
+		<script type="module" src="./js/main.js"></script>
 	</body>
 </html>

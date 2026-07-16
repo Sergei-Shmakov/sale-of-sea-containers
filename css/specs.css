@@ -1,0 +1,71 @@
+.specs {
+	background: var(--slate-50);
+}
+
+.specs__intro {
+	margin-bottom: 2.5rem;
+}
+
+.specs__intro p {
+	max-width: 42rem;
+}
+
+.specs__table-wrap {
+	overflow-x: auto;
+	background: var(--white);
+	border-radius: var(--radius-xl);
+	border: 1px solid var(--slate-200);
+	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.specs__table {
+	width: 100%;
+	text-align: left;
+	font-size: 0.875rem;
+	white-space: nowrap;
+	border-collapse: collapse;
+}
+
+.specs__table thead {
+	background: var(--slate-50);
+	border-bottom: 1px solid var(--slate-200);
+	color: var(--slate-500);
+	font-weight: 500;
+}
+
+.specs__table th,
+.specs__table td {
+	padding: 1rem 1.5rem;
+}
+
+.specs__col--highlight {
+	background: var(--slate-50);
+}
+
+.specs__table thead .specs__col--highlight {
+	color: var(--slate-900);
+	font-weight: 600;
+	background: var(--slate-100);
+}
+
+.specs__table tbody {
+	color: var(--slate-700);
+}
+
+.specs__table tbody tr + tr {
+	border-top: 1px solid var(--slate-100);
+}
+
+.specs__table td:first-child {
+	font-weight: 500;
+	color: var(--slate-900);
+}
+
+.specs__cell--accent {
+	color: var(--red-600);
+	font-weight: 500;
+}
+
+.specs__cell--bold {
+	font-weight: 500;
+}
